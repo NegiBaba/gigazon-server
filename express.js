@@ -5,4 +5,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+  res.send('You sent get request to gigazon server')
+})
+
 export default app;
