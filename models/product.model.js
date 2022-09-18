@@ -8,4 +8,5 @@ const productSchema = new Schema({
   isProductNew: Boolean
 });
 
+export { productSchema };
 export default mongoose.model('Product', productSchema);
