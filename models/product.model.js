@@ -5,7 +5,7 @@ const productSchema = new Schema({
   price: Number,
   discount: Number,
   image: String,
-  isNew: Boolean
+  isProductNew: Boolean
 });
 
 export default mongoose.model('Product', productSchema);
