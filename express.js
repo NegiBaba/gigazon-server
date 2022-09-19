@@ -2,6 +2,7 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import cors from "cors"
 import productRoutes from "./routes/product.route"
+import cartRoutes from "./routes/cart.route"
 
 const app = express();
 
@@ -13,5 +14,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/', productRoutes);
+app.use('/', cartRoutes);
 
 export default app;
