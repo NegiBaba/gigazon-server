@@ -10,7 +10,6 @@ const upsert = async (req, res) => {
     });
     try {
       const prod = await productToBeAdded.save();
-      console.log(prod);
       return res.status(200).json({
         message: 'Successfully added product to the cart!'
       })
@@ -29,7 +28,6 @@ const upsert = async (req, res) => {
 const list = async (req, res) => {
   try {
     const products = await Cart.find({}, { product: 1 });
-    console.log(products);
     return res.json(products);
   } catch (error) {
     console.log(error)
