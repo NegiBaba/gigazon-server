@@ -36,7 +36,32 @@ const list = async (req, res) => {
   }
 }
 
+const update = async (req, res) => {
+  console.log(req.body)
+  const { _id, field, value } = req.body;
+  try {
+    const product = await Product.findOne({ _id: _id });
+    if (product) {
+      product[field] = value;
+      try {
+        await product.save();
+        res.status(200).json({
+          message: 'Successfully updated the product!'
+        })
+      } catch (error) {
+        res.status(400).json({
+          error: error
+        })
+      }
+    }
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
 export default {
   addProduct,
-  list
+  list,
+  update
 }
