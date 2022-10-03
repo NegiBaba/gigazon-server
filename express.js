@@ -4,6 +4,7 @@ import cors from 'cors';
 import productRoutes from './routes/product.route';
 import cartRoutes from './routes/cart.route';
 import filterRoutes from './routes/filter.route';
+import searchRoute from './routes/search.route';
 
 const app = express();
 
@@ -17,5 +18,6 @@ app.get('/', (req, res) => {
 app.use('/', productRoutes);
 app.use('/', cartRoutes);
 app.use('/', filterRoutes);
+app.use('/', searchRoute);
 
 export default app;
